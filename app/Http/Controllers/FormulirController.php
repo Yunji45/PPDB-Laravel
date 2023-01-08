@@ -26,4 +26,10 @@ class FormulirController extends Controller
         $data->save();
         return redirect('/formpengisian');
     }
+
+    public function show (Request $request, $id){
+        $data = Formulir::find($id)->get()->paginate()->lates(10);
+
+        return view ('home')->compact($data , 'data');
+    }
 }

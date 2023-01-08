@@ -15,7 +15,10 @@ use App\Http\Controllers\FormulirController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend/app');
+});
+Route::get('/login', function () {
+    return view('auth/login');
 });
 Route::get('/formpengisian', function () {
     return view('pageusers');
