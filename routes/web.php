@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CekmutasiController;
 use App\Http\Controllers\FormulirController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +19,16 @@ use App\Http\Controllers\FormulirController;
 Route::get('/', function () {
     return view('frontend/app');
 });
-Route::get('/login', function () {
-    return view('auth/login');
-});
 Route::get('/formpengisian', function () {
     return view('pageusers');
 });
 Route::post('/insert', [FormulirController::class, 'insert']);
+
+//auth
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+
+Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');

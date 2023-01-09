@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>PPDB SCHOOL</title>
+    <title>Profil - Man 4 Ciamis</title>
     
     <!-- Bootstrap core CSS -->
     <link href="{{asset('home/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -34,7 +34,10 @@ https://templatemo.com/tm-557-grad-school
   <!--header-->
   <header class="main-header clearfix" role="header">
     <div class="logo">
-      <a href="#"><em>Grad</em> School</a>
+    <!-- <img src="{{asset('home/assets/images/unnamed.jpg')}}" alt="" width="60" height="25" class="d-inline-block align-text-top"> -->
+      <a href="#">
+        <em>Advanced</em>
+      </a>
     </div>
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
@@ -59,12 +62,12 @@ https://templatemo.com/tm-557-grad-school
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
       <video autoplay muted loop id="bg-video">
-          <source src="{{asset('home/assets/images/course-video.mp4')}}" type="video/mp4" />
+          <source src="{{asset('home/assets/images/video.mp4')}}" type="video/mp4" />
       </video>
 
       <div class="video-overlay header-text">
           <div class="caption">
-              <h6>Graduate School of Management</h6>
+              <h6>Senior High School</h6>
               <h2><em>Man 4</em> Ciamis</h2>
               <div class="main-button">
                   <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
