@@ -18,18 +18,26 @@
             class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-        <h1> FORM LOGIN </h1>
-          <form action="{{ route('actionlogin') }}" method="post">
+        @if(session('success'))
+        <p class="alert alert-success">{{ session('success') }}</p>
+        @endif
+        @if($errors->any())
+        @foreach($errors->all() as $err)
+        <p class="alert alert-danger">{{ $err }}</p>
+        @endforeach
+        @endif
+        <h1 class="text-center"> FORM LOGIN </h1>
+          <form action="{{ route('login.action') }}" method="post">
             @csrf
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example13">Email address</label>
+              <input type="username" name="username" id="form1Example13" class="form-control form-control-lg" />
+              <label class="form-label" for="form1Example13">Email</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" />
+              <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" />
               <label class="form-label" for="form1Example23">Password</label>
             </div>
   
@@ -39,12 +47,12 @@
                 <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                 <label class="form-check-label" for="form1Example3"> Remember me </label>
               </div>
-              <a href="#!">Forgot password?</a>
+              <a href="{{route('register')}}">Register !!</a>
             </div>
-  
-            <!-- Submit button -->
-            <a href="{{route('register')}}" class="btn btn-primary btn-lg btn-block">Sign in</a>
+            <button class="btn btn-primary btn-lg btn-block">Login</button>
+          </form>
 
+            <!-- Submit button -->
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
             </div>
@@ -57,7 +65,6 @@
               role="button">
               <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
   
-          </form>
         </div>
       </div>
     </div>

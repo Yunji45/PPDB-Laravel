@@ -35,8 +35,8 @@ https://templatemo.com/tm-557-grad-school
   <header class="main-header clearfix" role="header">
     <div class="logo">
     <!-- <img src="{{asset('home/assets/images/unnamed.jpg')}}" alt="" width="60" height="25" class="d-inline-block align-text-top"> -->
-      <a href="#">
-        <em>Advanced</em>
+      <a href="/">
+        <em>logo</em>
       </a>
     </div>
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
@@ -54,7 +54,7 @@ https://templatemo.com/tm-557-grad-school
         <li><a href="#section4">Courses</a></li>
         <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="#section6">Contact</a></li>
-        <li><a href="" class="external">External</a></li>
+        <li><a href="{{route('login')}}" class="external">Login</a></li>
       </ul>
     </nav>
   </header>

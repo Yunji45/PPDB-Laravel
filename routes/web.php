@@ -25,10 +25,11 @@ Route::get('/formpengisian', function () {
 Route::post('/insert', [FormulirController::class, 'insert']);
 
 //auth
-Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
-
-Route::get('/register', [LoginController::class, 'register'])->name('register');
-
-Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+Route::get('register', [LoginController::class, 'register'])->name('register');
+Route::post('register', [LoginController::class, 'register_action'])->name('register.action');
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'login_action'])->name('login.action');
+Route::get('password', [LoginController::class, 'password'])->name('password');
+Route::post('password', [LoginController::class, 'password_action'])->name('password.action');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('home', [LoginController::class, 'home'])->name('home');
