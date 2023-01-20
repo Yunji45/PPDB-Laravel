@@ -5,6 +5,7 @@ use App\Http\Controllers\CekmutasiController;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\HomeController;
+use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,12 @@ use App\Http\Controllers\Auth\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/app');
-});
+// Route::get('/', function () {
+//     return view('frontend/app');
+// });
+
+Route::get('/', [FrontendController::class, 'index'])->name('awal');
+Route::post('sendEmail', [FrontendController::class , 'email'])->name('email');
 Route::get('/formpengisian', function () {
     return view('pageusers');
 });
